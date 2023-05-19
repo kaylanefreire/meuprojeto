@@ -1,26 +1,16 @@
 <?php
-use models\Usuario;
+use models\Livro;
 
-/**
-* Tutorial CRUD
-* Autor:Alan Klinger 05/06/2017
-*/
+class LivroController {
 
-#A classe devera sempre iniciar com letra maiuscula
-#terá sempre o mesmo nome do arquivo
-#e precisa terminar com a palavra Controller
-class UsuariosController {
-
-	/**
-	* Para acessar http://localhost/NOMEDOPROJETO/usuarios/index
-	**/
+	
 	function index($id = null){
 
 		#variáveis que serao passados para a view
 		$send = [];
 
 		#cria o model
-		$model = new Usuario();
+		$model = new Livro();
 		
 		
 		$send['data'] = null;
@@ -36,13 +26,13 @@ class UsuariosController {
 		#$send['tipos'] = [0=>"Escolha uma opção", 1=>"Usuário comum", 2=>"Admin"];
 
 		#chama a view
-		render("usuarios", $send);
+		render("livro", $send);
 	}
 
 	
 	function salvar($id=null){
 
-		$model = new Usuario();
+		$model = new Livro();
 		
 		if ($id == null){
 			$id = $model->save($_POST);
@@ -50,15 +40,15 @@ class UsuariosController {
 			$id = $model->update($id, $_POST);
 		}
 		
-		redirect("usuarios/index/$id");
+		redirect("livro/index/$id");
 	}
 
 	function deletar(int $id){
 		
-		$model = new Usuario();
+		$model = new Livro();
 		$model->delete($id);
 
-		redirect("usuarios/index/");
+		redirect("livro/index/");
 	}
 
 

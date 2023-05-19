@@ -2,10 +2,10 @@
 
 namespace models;
 
-class Usuario extends Model {
-
-    protected $table = "usuario";
+class Autores extends Model {
+    
+    protected $table = "autores";
     #nao esqueça da ID
     protected $fields = ["id","nome","dataNascimento","email"];
- 
+    
 }

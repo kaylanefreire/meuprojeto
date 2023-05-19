@@ -1,20 +1,32 @@
-DROP TABLE usuarios;
-DROP TABLE veiculos;
+DROP TABLE IF EXISTS autores;
 
-CREATE TABLE IF NOT EXISTS usuarios (
+CREATE TABLE IF NOT EXISTS autores (
     id              INTEGER PRIMARY KEY,
     nome            TEXT    NOT NULL,
     dataNascimento  TEXT,
-    tipo            INTEGER,
-    ativado         INTEGER
+    email           TEXT    NOT NULL
 );
 
-INSERT INTO usuarios (id, nome, dataNascimento, tipo, ativado) values (1,'teste','01-01-2000',1,1);
+INSERT INTO autores (id, nome, dataNascimento, email) values (1,'teste 1','01-01-2000', 't1@gmail.com');
+INSERT INTO autores (id, nome, dataNascimento, email) values (2,'teste 2','01-01-2001', 't2@gmail.com');
+INSERT INTO autores (id, nome, dataNascimento, email) values (3,'teste 3','01-01-2003', 't3@gmail.com');
 
-CREATE TABLE IF NOT EXISTS veiculos (
+
+DROP TABLE IF EXISTS livro;
+
+CREATE TABLE IF NOT EXISTS livro (
     id               INTEGER PRIMARY KEY,
-    placa            TEXT    NOT NULL,
-    modelo           TEXT,
-    cor              TEXT,
-    ano              INTEGER
+    titulo           TEXT    NOT NULL,
+    genero           TEXT,
+    autor            TEXT,
+    anopublicacao    INTEGER
+);
+
+DROP TABLE IF EXISTS usuario; 
+
+CREATE TABLE IF NOT EXISTS usuario (
+    id               INTEGER PRIMARY KEY,
+    nome             TEXT NOT NULL,
+    dataNascimento   TEXT,
+    email            TEXT NOT NULL
 );

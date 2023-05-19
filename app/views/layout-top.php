@@ -25,6 +25,12 @@
         <li class="nav-item">
           <a class="nav-link" href="<?=route('usuarios')?>">Usuários</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?=route('autores')?>">Autores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?=route('livro')?>">Livros</a>
+        </li>
       </ul>
     </div>
   </div>
